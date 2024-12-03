@@ -10,7 +10,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: 22
-          distribution: 'adoptopenjdk'  # 使用 OpenJDK 发行版
+          distribution: 'temurin'  # 使用 Eclipse Temurin 作为 OpenJDK 的发行版
       - name: Cache Maven packages
         uses: actions/cache@v3
         with:
@@ -19,3 +19,4 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
+
